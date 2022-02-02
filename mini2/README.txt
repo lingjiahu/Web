@@ -3,12 +3,11 @@ Works with Chrome.
 Thank you for grading! Have a good one :)
 
 
-https://www.lipsum.com/
-
+lorem ipsum: https://www.lipsum.com/
 
 colors:
-1E4240
-398164
-84AF88
-D2D7CE
-348E00
+deepest green: 1E4240
+medium green: 398164
+light green: 84AF88
+mild green: D2D7CE
+bright green: 348E00
