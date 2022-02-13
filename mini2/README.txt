@@ -11,3 +11,8 @@ medium green: 398164
 light green: 84AF88
 mild green: D2D7CE
 bright green: 348E00
+link green: 738E73
+
+
+
+the color of links will never change?
