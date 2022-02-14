@@ -3,7 +3,7 @@ Works with Chrome, mac 13 inch screen.
 lorem ipsum: https://www.lipsum.com/
 
 coluors:
-BG1: deepest green/ purple: 1E4240/ 51087E
+BG1: deepest green/ purple: 1E4240/ 7E1E80
 BG2: medium green/ purple: 398164/ 9d449e
 BG3: light green/ purple: 84AF88/ c46bc5
 BG4: mild green/ purple: D2D7CE/ EFDCF9
