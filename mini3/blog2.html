@@ -15,7 +15,8 @@
       background-color: #1E4240;
       height: 28px;
     }
-    .topBar a{
+
+    .topBar a {
       text-decoration: underline;
     }
 
@@ -27,6 +28,7 @@
       float: left;
       width: 57%;
     }
+
     #topRight {
       padding-top: 8px;
       margin-left: 500px;
@@ -38,23 +40,62 @@
       background-color: #398164;
       height: 130px;
     }
+
     #titleLeft {
-      padding-top: 8px;
+      padding-top: 30px;
       margin-left: 130px;
-      font-size: 14px;
+      font-size: 52px;
       color: white;
       float: left;
-      width: 57%;
+      width: 17%;
     }
+
     #titleRight {
+      padding-top: 50px;
+      font-size: 28px;
+      color: white;
+    }
+
+    .menu {
+      background-color: #84AF88;
+      color: black;
+      font-size: 20px;
+      height: 45px;
+    }
+
+    .menu a {
+      color: black;
+    }
+
+    #menuLinks {
+      padding-top: 15px;
+      margin-left: 130px;
+      float: left;
+      width:48%;
+    }
+
+    #colour {
+      padding-top: 15px;
+    }
+
+    .contents {
+      height: 1000px;
+    }
+
+    #contentLeft{
+      float: left;
+      width: 17%;
+    }
+
+    #contentMiddle{
 
     }
 
-    .menu {}
-
-    .contents {}
-
-    .index {}
+    #contentRight{
+      background: #D2D7CE;
+      float: right;
+      width: 20%;
+    }
 
     .footer {}
   </style>
@@ -62,10 +103,11 @@
 
 <body link="738E73" vlink="738E73" alink="738E73">
   <font face="arial">
+
     <div class="topBar">
       <div id="topLeft">
         Welcome, Guest &nbsp
-        <a href="https://wordpress.com/log-in"> Login</a> &nbsp
+        <a id="t1" href="https://wordpress.com/log-in"> Login</a> &nbsp
         <a href="https://wordpress.com/start/user/en"> Sign Up </a>
       </div>
       <div id="topRight">
@@ -76,13 +118,45 @@
     </div>
 
     <div class="title">
-      <h>My Blog</h>
+      <div id="titleLeft">My Blog</div>
+      <div id="titleRight">Description of My Blog</div>
     </div>
 
+    <div class="menu">
+      <div id="menuLinks">
+        <a href="https://wordpress.com/"> HOME </a> 
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="https://wordpress.com/about/"> ABOUT </a>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href=""> BLOG </a>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="https://wordpress.com/support/">CONTACT </a>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      </div>
+      <div id="colour"> COLOUR</div>
+    </div>
 
+    <div class="contents">
+      <div
 
+    </div>
 
   </font>
+
+  <script>
+    document.getElementById("colour").addEventListener("click", changeText);
+
+    function changeText() {
+
+    }
+    function changeBG1() {
+
+    }
+
+
+  </script>
+
+
 </body>
 
 </html>
