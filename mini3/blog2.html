@@ -11,6 +11,7 @@
       text-decoration: none;
     }
 
+    /* top bar */
     .topBar {
       background-color: #1E4240;
       height: 28px;
@@ -38,6 +39,7 @@
       background-color: #1E4240;
     }
 
+    /* title */
     .title {
       background-color: #398164;
       height: 130px;
@@ -58,6 +60,7 @@
       color: white;
     }
 
+    /* menu bar */
     .menu {
       background-color: #84AF88;
       color: black;
@@ -83,10 +86,12 @@
       font-size: 20px;
     }
 
+    /* main contents */
     .contents {
       height: 1550px;
     }
 
+    /* paragraphs */
     #contentLeft {
       padding-top: 30px;
       margin-left: 130px;
@@ -96,16 +101,6 @@
 
     #contentLeft a {
       color: #348E00;
-    }
-
-    #contentRight {
-      background: #D2D7CE;
-      float: right;
-      width: 20%;
-      padding-left: 45px;
-      padding-bottom: 50px;
-      padding-top: 30px;
-      margin-right: 130px;
     }
 
     /* vertical green line sections */
@@ -120,6 +115,17 @@
       margin-left: 45px;
     }
 
+    /* indices on the right */
+    #contentRight {
+      background: #D2D7CE;
+      float: right;
+      width: 20%;
+      padding-left: 45px;
+      padding-bottom: 50px;
+      padding-top: 30px;
+      margin-right: 130px;
+    }
+
     #contentRight a {
       color: black;
     }
@@ -130,6 +136,7 @@
       padding-bottom: 0px;
     }
 
+    /* footer */
     .footer {
       background-color: #1E4240;
       height: 180px;
@@ -162,6 +169,7 @@
       vertical-align: top;
     }
 
+    /* headers in footer */
     .FHeader {
       color: #84af88;
     }
@@ -170,6 +178,7 @@
       color: white;
     }
 
+    /* make all links greed by default */
     body a {
       color: #738E73;
     }
@@ -186,6 +195,7 @@
         <a id="l1" href="https://wordpress.com/log-in"> Login</a> &nbsp
         <a id="l2" href="https://wordpress.com/start/user/en"> Sign Up </a>
       </div>
+
       <div id="topRight">
         Stay Updated &nbsp
         <a id="l3" href="https://wordpress.com/fr/pricing/"> Subscribe via RSS </a> &nbsp
@@ -214,7 +224,7 @@
 
     <div class="contents">
       <div id="contentLeft">
-
+        <!-- first paragraph -->
         <h1 class="CHeader">Don't Cancel Chuck!</h1>
         <p>
           on July 01 in
@@ -230,6 +240,7 @@
           hendrerit turpis dictum. Donec eleifend suscipit sem congue semper. Donec tristique velit non orci
           tincidunt iaculis. Nam vel vestibulum mauris, sit amet tincidunt mi. Proin commodo tortor non
           euismod venenatis. </p>
+        <!-- vertical green line section -->
         <div class="VGL">
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus risus semper,
             ornare tellus eu, sollicitudin risus. Integer egestas molestie eleifend. Nulla ornare
@@ -247,6 +258,7 @@
           <a id="l8" href="https://wordpress.com/go/"> <b>Read More</b> </a>
         </p>
 
+        <!-- second paragraph -->
         <h1 class="CHeader">Alien Spacecraft found in New Mexico</h1>
         <p> on July 01 in
           <a id="l9" href="https://wordpress.com/themes">General</a>
@@ -271,6 +283,7 @@
           ullamcorper arcu. Integer congue ultricies dolor vel accumsan. Nulla aliquam pulvinar augue, sit
           amet ullamcorper mauris consequat ut.</p>
 
+        <!-- third paragraph -->
         <h1>Ghostly Goo in your Kitchen Sink?</h1>
         <p>on July 01 in
           <a id="l12" href="https://wordpress.com/themes"> General </a>
@@ -289,6 +302,7 @@
           </a>luctus viverra. Phasellus semper rhoncus dolor in
           tempus.</p>
 
+        <!-- header level 4 -->
         <h4 class="CHeader">Header Level 4</h4>
         <ol>
           <li>Curabitur in leo sed leo viverra pulvinar non non tellus. </li>
@@ -304,6 +318,7 @@
             euismod venenatis. </p>
         </div>
 
+        <!-- header level 3 -->
         <h3 class="CHeader">Header Level 3</h3>
         <ul>
           <li>Donec pellentesque metus non lectus ultricies vehicula. </li>
@@ -313,8 +328,10 @@
           <li>Curabitur in lorem malesuada dui placerat porta. </li>
           <li>Nunc at mi et mauris facilisis accumsan. </li>
         </ol>
+
       </div>
 
+      <!-- indicies on the right -->
       <div id="contentRight">
         <h3 class="CHeader">Categories</h3>
         &nbsp &nbsp &nbsp
@@ -332,6 +349,7 @@
         <a href="https://www.opendemocracy.net/en/transformation/five-real-conspiracies-you-need-know-about/">International
           Conspiracies
         </a>
+
         <h3 class="CHeader">Recent Posts </h3>
         &nbsp &nbsp &nbsp
         <a href="https://www.housebeautiful.com/lifestyle/g22635979/real-life-haunted-house-stories/"> Ghost Sighting in
@@ -348,6 +366,7 @@
         <br> &nbsp &nbsp &nbsp
         <a href="https://www.livescience.com/24598-bigfoot.html"> Bigfoot: Fact or Fiction
         </a>
+
         <h3 class="CHeader">Archives</h3>
         &nbsp &nbsp &nbsp
         <a href="https://wordpress.com/fr/createur-de-logo/"> June 2008
@@ -367,6 +386,7 @@
 
     </div>
 
+    <!-- footer -->
     <div class="footer">
       <span class="footerLeft">
         <h3 class="FHeader">Links</h3>
@@ -398,13 +418,15 @@
 
   </font>
 
+  <!-- colour changing -->
   <script>
     var curColour = true; // true: green; false: purple
 
     document.getElementById("colour").addEventListener("click", changeColour);
 
+    // change all green colours to purple when COLOUR is clicked
     function changeColour() {
-      if (curColour) {
+      if (curColour) {  // if the current page colour is green
         curColour = false;
         changeBG1P();
         changeBG2P();
@@ -412,7 +434,7 @@
         changeBG4P();
         changeT1P();
         changeT2P();
-      } else {
+      } else {  // if the current page colour is purple, change it back to green
         curColour = true;
         changeBG1G();
         changeBG2G();
@@ -423,6 +445,7 @@
       }
     }
 
+    // the name of the functions correspond to colours listed in README.txt
     function changeBG1P() {
       document.getElementsByClassName("topBar")[0].style.backgroundColor = "#7E1E80";
       document.getElementById("topLeft").style.backgroundColor = "#7E1E80";
