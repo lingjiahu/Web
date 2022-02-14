@@ -203,7 +203,7 @@
         <a href="https://wordpress.com/support/">CONTACT </a>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       </div>
-      <div id="colour"> COLOUR</div>
+      <button id="colour"> COLOUR</button>
     </div>
 
     <div class="contents">
@@ -232,7 +232,6 @@
             semper. Donec tristique velit non orci tincidunt iaculis. Nam vel vestibulum mauris, sit
             amet tincidunt mi. Proin commodo tortor non euismod venenatis. </p>
         </div>
-
         <p>
           Curabitur sodales felis at tortor dignissim facilisis. Donec ut tellus in leo condimentum tincidunt ac
           nec magna. Duis eget turpis at ante commodo molestie. Etiam vitae pellentesque odio, et sodales ante.
@@ -242,7 +241,6 @@
           <a href="https://wordpress.com/go/"> <b>Read More</b> </a>
         </p>
 
-
         <h1 class="CHeader">Alien Spacecraft found in New Mexico</h1>
         <p> on July 01 in
           <a href="https://wordpress.com/themes">General</a>
@@ -250,7 +248,6 @@
           <a href="https://wordpress.com/install-plugins/">petitions </a>
           by
           <a href="https://wordpress.com/google/">admin</a>
-
         </p>
         <p>Phasellus nisi quam, sodales ut ipsum vitae, dignissim finibus metus. Integer euismod at nulla eget
           maximus. Etiam aliquet eu lorem at lobortis. Sed diam neque, suscipit in aliquet id, euismod ac
@@ -285,12 +282,12 @@
             <b>Duis id nisi ut magna </b>
           </a>luctus viverra. Phasellus semper rhoncus dolor in
           tempus.</p>
+
         <h4 class="CHeader">Header Level 4</h4>
         <ol>
           <li>Curabitur in leo sed leo viverra pulvinar non non tellus. </li>
           <li>Nunc at mi et mauris facilisis accumsan. </li>
         </ol>
-
         <div class="VGL">
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus risus
             semper, ornare tellus eu, sollicitudin risus. Integer egestas molestie eleifend.
@@ -396,13 +393,39 @@
   </font>
 
   <script>
-    document.getElementById("colour").addEventListener("click", changeText);
+    var curColour = true; // true: green; false: purple
+
+    document.getElementById("colour").addEventListener("click", changeColour);
+
+    function changeColour() {
+      if (curColour) {
+        curColour = false;
+        changeBG1();
+
+
+      } else {
+        curColour = true;
+
+      }
+    }
+
+    function changeBG1() {
+      document.getElementById("topBar").style.backgroundColor = blue;
+    }
+
+    function changeBG2() {
+    }
+
+    function changeBG3() {
+    }
+
+    function changeBG4() {
+    }
 
     function changeText() {
-
     }
-    function changeBG1() {
 
+    function changeLink() {
     }
 
 
