@@ -84,8 +84,8 @@
 
     #contentLeft {
       margin-left: 130px;
-    }
 
+    }
 
     #contentRight {
       background: #D2D7CE;
@@ -96,16 +96,60 @@
       padding-top: 30px;
       margin-right: 130px;
     }
-    #contentRight a{
+
+    #contentRight a {
       color: black;
     }
+
     /* headers in contentRight */
-    .header {
+    .CRHeader {
       margin-bottom: 0px;
       padding-bottom: 0px;
     }
 
-    .footer {}
+    .footer {
+      background-color: #1E4240;
+      height: 180px;
+      vertical-align: top;
+    }
+
+    span.space {
+      padding-left: 130px;
+    }
+
+    span.footerLeft {
+      padding-top: 5px;
+      padding-left: 130px;
+      display: inline-block;
+      color: white;
+      vertical-align: top;
+    }
+
+    span.footerMiddle {
+      padding-left: 110px;
+      padding-top: 5px;
+      display: inline-block;
+      color: white;
+      vertical-align: top;
+    }
+
+    span.footerRight {
+      display: inline-block;
+      color: #84AF88;
+      font-size: 15px;
+      text-align: right;
+      padding-left: 370px;
+      padding-top: 28px;
+      vertical-align: top;
+    }
+
+    .FHeader {
+      color: #84AF88;
+    }
+    
+    .footer a{
+      color: white;
+    }
   </style>
 </head>
 
@@ -145,10 +189,12 @@
     </div>
 
     <div class="contents">
-      <div id="contentLeft"></div>
+      <div id="contentLeft">
+
+      </div>
 
       <div id="contentRight">
-        <h3 class="header">Categories</h3>
+        <h3 class="CRHeader">Categories</h3>
         &nbsp &nbsp &nbsp
         <a href="https://wordpress.com/fr/partners/"> General </a>
         <br> &nbsp &nbsp &nbsp
@@ -164,9 +210,10 @@
         <a href="https://www.opendemocracy.net/en/transformation/five-real-conspiracies-you-need-know-about/">International
           Conspiracies
         </a>
-        <h3 class="header">Recent Posts </h3>
+        <h3 class="CRHeader">Recent Posts </h3>
         &nbsp &nbsp &nbsp
-        <a href="https://www.housebeautiful.com/lifestyle/g22635979/real-life-haunted-house-stories/"> Ghost Sighting in Mansion
+        <a href="https://www.housebeautiful.com/lifestyle/g22635979/real-life-haunted-house-stories/"> Ghost Sighting in
+          Mansion
         </a>
         <br> &nbsp &nbsp &nbsp
         <a
@@ -179,7 +226,7 @@
         <br> &nbsp &nbsp &nbsp
         <a href="https://www.livescience.com/24598-bigfoot.html"> Bigfoot: Fact or Fiction
         </a>
-        <h3 class="header">Archives</h3>
+        <h3 class="CRHeader">Archives</h3>
         &nbsp &nbsp &nbsp
         <a href="https://wordpress.com/fr/createur-de-logo/"> June 2008
         </a>
@@ -196,6 +243,35 @@
         </a>
       </div>
 
+    </div>
+
+    <div class="footer">
+      <span class="footerLeft">
+        <h3 class="FHeader">Links</h3>
+        <a href="https://design.tutsplus.com/">PSDtuts - Photoshop Tutorials </a>
+        <br>
+        <a href="https://code.tutsplus.com/"> NetTuts - Web Development and design tutorials </a>
+        <br>
+        <a
+          href="https://graphicdesignjunction.com/2019/08/illustrator-tutorials-34-new-vector-tuts-to-learn-drawing-and-illustration/">
+          VectorTuts - Illustrator and Vector tutorials </a>
+        <br>
+        <a href="https://www.pinterest.ca/tealesworld/flash-tuts/"> FlashTuts - Adobe Flash tutorials </a>
+      </span>
+
+      <span class="footerMiddle">
+        <h3 class="FHeader">Follow our updates</h3>
+        <a href="https://wordpress.com/fr/features/">Subscribe to RSS Feed</a>
+        <br>
+        <a href="https://en.wikipedia.org/wiki/RSS">What is RSS? </a>
+        <br>
+        <a href="https://wordpress.com/fr/createur-de-logo/"> Email Updates </a>
+      </span>
+
+      <span class="footerRight">
+        Copyright @ 2009 <br>
+        All Rights Reserved.
+      </span>
     </div>
 
   </font>
