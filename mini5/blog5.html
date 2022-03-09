@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+It works well at:
+1) 425px for phone view
+2) 768px for tablet view
+3) 1024px for PC view
+
+size range:
+phone: 320px - 425px
+tablet: 426px - 768px
+PC: >768px 
+-->
+
+<!-- TODO 
+1) inspect
+2) size -->
+
+<head>
+    <title>Mini 5 Blog</title>
+    <meta author="Lingjia Hu, 260885791">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            font-family: Arial;
+        }
+
+        /* make all links greed by default */
+        body a {
+            color: #738E73;
+            text-decoration: none;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        /* header */
+        .topBar {
+            background-color: #1E4240;
+            font-size: 1vw;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            color: white;
+            width: 100%;
+            height: 2vh;
+        }
+
+        .topBar a {
+            text-decoration: underline;
+        }
+
+        .title {
+            background-color: #398164;
+            padding-left: 8vw;
+            height: 20vh;
+            color: white;
+            display: block;
+        }
+
+        #titleLeft {
+            color: white;
+            font-size: 4vw;
+            padding-top: 4vh;
+            padding-bottom: 4vh;
+        }
+
+        #titleRight {
+            font-size: 2vw;
+            color: white;
+            padding-top: 6vh;
+            padding-left: 3vw;
+        }
+
+        .menu {
+            background-color: #84AF88;
+            color: black;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            width: 100%;
+        }
+
+        .menu a {
+            padding-left: 8.33vw;
+            color: black;
+        }
+
+        .menu a.icon {
+            display: none;
+            padding-right: 2vw;
+        }
+
+        /* paragraphs */
+        .para {
+            padding-top: 3vh;
+            padding-bottom: 3vh;
+            margin-right: 3vw;
+            font-size: 1.2vw;
+        }
+
+        .para a {
+            color: #348E00;
+        }
+
+        #paraA {
+            display: block;
+        }
+
+        #paraB {
+            display: none;
+        }
+
+        #paraC {
+            display: none;
+        }
+
+        #paraD {
+            display: none;
+        }
+
+        #paraLink {
+            display: none;
+            color: black;
+            padding-bottom: 2vh;
+        }
+
+        #paraLink a {
+            padding-left: 3vw;
+            color: black;
+        }
+
+        /* vertical green line sections */
+        .VGL {
+            border-left-color: #348E00;
+            border-left-style: solid;
+            border-width: 0.3vw;
+            padding-left: 2vw;
+            margin-left: 3vw;
+            margin: 3vw;
+        }
+
+        /* links on the right */
+        .contentRight {
+            background: #D2D7CE;
+            padding-top: 3vh;
+            padding-left: 4vw;
+            height: 70vh;
+            font-size: 1.3vw;
+        }
+
+        .contentRight a {
+            color: black;
+            padding-left: 3vw;
+            padding-top: 1vh;
+        }
+
+        /* headers in contents */
+        .CHeader {
+            margin-bottom: 0px;
+            padding-bottom: 1vh;
+        }
+
+        /* footer */
+        .footer {
+            background-color: #1E4240;
+            height: 25vh;
+            font-size: 1.1vw;
+            padding-top: 3vh;
+        }
+
+        .footerLeft {
+            color: white;
+            vertical-align: top;
+        }
+
+        .footerMiddle {
+            color: white;
+            vertical-align: top;
+        }
+
+        .footerRight {
+            color: #84AF88;
+            text-align: right;
+            vertical-align: top;
+            padding-top: 3vh;
+        }
+
+        /* headers in footer */
+        .FHeader {
+            color: #84af88;
+        }
+
+        .footer a {
+            color: white;
+        }
+
+        /* TODO what does this thing do */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        [class*="col-"] {
+            float: left;
+        }
+
+        /* For mobile phones */
+        @media only screen and (max-width: 425px) {
+            .topBar {
+                font-size: 3vw;
+                padding-top: 1vh;
+                padding-bottom: 1vh;
+            }
+
+            .title {
+                height: 15vh;
+            }
+
+            #titleLeft {
+                font-size: 5vw;
+                padding-bottom: 0vh;
+            }
+
+            #titleRight {
+                font-size: 3vw;
+                padding-left: 0vw;
+                padding-top: 1vh;
+            }
+
+            .menu a:not(:first-child) {
+                display: none;
+            }
+
+            .menu a.icon {
+                float: right;
+                display: block;
+                color: black;
+            }
+
+            .tab {
+                background-color: lightgray;
+                display: block;
+            }
+
+            #tabItem {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding-top: 1vh;
+                padding-bottom: 1vh;
+                padding-left: 8.33vw;
+                background-color: lightgray;
+                border: whitesmoke;
+                border-style: solid;
+                border-top: 1px;
+                color: black;
+                display: block;
+            }
+
+            .contentRight {
+                display: none;
+            }
+
+            .para {
+                font-size: 3vw;
+            }
+
+            .footer {
+                font-size: 3vw;
+                height: 50vh;
+            }
+
+            .col-s-1 {
+                width: 8.33%;
+            }
+
+            .col-s-2 {
+                width: 16.66%;
+            }
+
+            .col-s-3 {
+                width: 25%;
+            }
+
+            .col-s-4 {
+                width: 33.33%;
+            }
+
+            .col-s-5 {
+                width: 41.66%;
+            }
+
+            .col-s-6 {
+                width: 50%;
+            }
+
+            .col-s-7 {
+                width: 58.33%;
+            }
+
+            .col-s-8 {
+                width: 66.66%;
+            }
+
+            .col-s-9 {
+                width: 75%;
+            }
+
+            .col-s-10 {
+                width: 83.33%;
+            }
+
+            .col-s-11 {
+                width: 91.66%;
+            }
+
+            .col-s-12 {
+                width: 100%;
+            }
+        }
+
+        /* For tablets */
+        @media only screen and (min-width: 426px) {
+            .tab {
+                display: none !important;
+                /* TODO */
+            }
+
+            #tabItem {
+                display: none !important;
+                /* TODO */
+            }
+
+            .col-m-1 {
+                width: 8.33%;
+            }
+
+            .col-m-2 {
+                width: 16.66%;
+            }
+
+            .col-m-3 {
+                width: 25%;
+            }
+
+            .col-m-4 {
+                width: 33.33%;
+            }
+
+            .col-m-5 {
+                width: 41.66%;
+            }
+
+            .col-m-6 {
+                width: 50%;
+            }
+
+            .col-m-7 {
+                width: 58.33%;
+            }
+
+            .col-m-8 {
+                width: 66.66%;
+            }
+
+            .col-m-9 {
+                width: 75%;
+            }
+
+            .col-m-10 {
+                width: 83.33%;
+            }
+
+            .col-m-11 {
+                width: 91.66%;
+            }
+
+            .col-m-12 {
+                width: 100%;
+            }
+        }
+
+        /* For PC */
+        @media only screen and (min-width: 769px) {
+            .tab {
+                display: none !important;
+                /* TODO */
+            }
+
+            #tabItem {
+                display: none !important;
+                /* TODO */
+            }
+
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header (top bar + title + menu) -->
+    <div class="row">
+        <div class="topBar">
+            <div class="col-1 col-m-1 col-s-1 topBar"> </div>
+            <div class="col-3 col-m-3 col-s-11 topBar">
+                Welcome, Guest
+                <a href="https://wordpress.com/log-in"> Login</a>
+                <a href="https://wordpress.com/start/user/en"> Sign Up </a>
+            </div>
+            <div class="col-4 col-m-4 col-s-1 topBar"> </div>
+            <div class="col-3 col-m-3 col-s-10 topBar">
+                Stay Updated
+                <a href="https://wordpress.com/fr/pricing/"> Subscribe via RSS </a>
+                <!-- TODO space missing -->
+                &nbsp
+                <a href="https://automattic.com/press/"> Email Updates</a>
+            </div>
+            <div class="col-1 col-m-1 col-s-1 topBar"> </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="title">
+            <span style="display: inline-block;" class="col-1"></span>
+            <span style="display: inline-block;" class="col-2 col-s-12">
+                <div id="titleLeft">My Blog</div>
+            </span>
+            <span style="display: inline-block;" class="col-4 col-s-12">
+                <div id="titleRight">Description of My Blog</div>
+            </span>
+            <span style="display: inline-block;" class="col-5"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="menu">
+            <a href="javascript:void(0);" onclick="displayParaA()"> HOME </a>
+            <a href="javascript:void(0);" onclick="displayParaB()"> ABOUT </a>
+            <a href="javascript:void(0);" onclick="displayParaC()"> BLOG </a>
+            <a href="javascript:void(0);" onclick="displayContact()"> CONTACT </a>
+            <a href="javascript:void(0);" class="icon" onclick="hambuger()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- dropdown list -->
+    <div style="display: none;" class="tab">
+        <a id="tabItem" href="javascript:void(0);" onclick="displayParaB()"> ABOUT </a>
+        <a id="tabItem" href="javascript:void(0);" onclick="displayParaC()"> BLOG </a>
+        <a id="tabItem" href="javascript:void(0);" onclick="displayContact()"> CONTACT </a>
+        <a id="tabItem" href="javascript:void(0);" onclick="displayLink()"> LINKS </a>
+    </div>
+
+    <!-- body -->
+    <div class="row">
+        <div class="col-1 col-m-1 col-s-1"> &nbsp </div>
+        <!-- main content -->
+        <div class="col-6 col-m-6 col-s-10 para">
+            <!-- first paragraph -->
+            <div id="paraA">
+                <h1 class="CHeader">Don't Cancel Chuck!</h1>
+                <p>
+                    on July 01 in
+                    <a id="l5" href="https://wordpress.com/themes"> General </a>
+                    tagged
+                    <a id="l6" href="https://wordpress.com/install-plugins/">petitions</a>
+                    by
+                    <a id="l7" href="https://wordpress.com/google/">admin </a>
+                </p>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus risus semper,
+                    ornare
+                    tellus eu, sollicitudin risus. Integer egestas molestie eleifend. Nulla ornare neque ut
+                    metus
+                    aliquet posuere. Pellentesque euismod egestas luctus. Pellentesque porta enim et elit
+                    eleifend,
+                    nec
+                    hendrerit turpis dictum. Donec eleifend suscipit sem congue semper. Donec tristique
+                    velit
+                    non
+                    orci
+                    tincidunt iaculis. Nam vel vestibulum mauris, sit amet tincidunt mi. Proin commodo
+                    tortor
+                    non
+                    euismod venenatis. </p>
+
+                <!-- vertical green line section -->
+                <div class="VGL">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus risus
+                        semper,
+                        ornare tellus eu, sollicitudin risus. Integer egestas molestie eleifend. Nulla
+                        ornare
+                        neque ut metus aliquet posuere. Pellentesque euismod egestas luctus. Pellentesque
+                        porta
+                        enim et elit eleifend, nec hendrerit turpis dictum. Donec eleifend suscipit sem
+                        congue
+                        semper. Donec tristique velit non orci tincidunt iaculis. Nam vel vestibulum mauris,
+                        sit
+                        amet tincidunt mi. Proin commodo tortor non euismod venenatis. </p>
+                </div>
+                <p>
+                    Curabitur sodales felis at tortor dignissim facilisis. Donec ut tellus in leo
+                    condimentum
+                    tincidunt
+                    ac
+                    nec magna. Duis eget turpis at ante commodo molestie. Etiam vitae pellentesque odio, et
+                    sodales
+                    ante.
+                    Sed vestibulum aliquet massa, ut tempus felis hendrerit et. In sodales consequat
+                    pellentesque.
+                    Curabitur
+                    accumsan sed nisi vel aliquet. Suspendisse suscipit urna placerat, ultrices sem.
+                    Nullam scelerisque tempor mauris ut sagittis.
+                    <a id="l8" href="https://wordpress.com/go/"> <b>Read More</b> </a>
+                </p>
+            </div>
+
+            <!-- second paragraph -->
+            <div id="paraB">
+                <h1 class="CHeader">Alien Spacecraft found in New Mexico</h1>
+                <p> on July 01 in
+                    <a id="l9" href="https://wordpress.com/themes">General</a>
+                    tagged
+                    <a id="l10" href="https://wordpress.com/install-plugins/">petitions </a>
+                    by
+                    <a id="l11" href="https://wordpress.com/google/">admin</a>
+                </p>
+                <p>Phasellus nisi quam, sodales ut ipsum vitae, dignissim finibus metus. Integer euismod at
+                    nulla
+                    eget
+                    maximus. Etiam aliquet eu lorem at lobortis. Sed diam neque, suscipit in aliquet id,
+                    euismod
+                    ac
+                    risus. Integer ullamcorper quam non augue viverra, tristique gravida leo tristique.
+                    Praesent
+                    at
+                    molestie lectus. Sed ac felis magna. Mauris consectetur sem at risus faucibus, et
+                    pharetra
+                    nulla
+                    pharetra.</p>
+                <ul>
+                    <li>Phasellus suscipit augue ut nunc volutpat, quis luctus elit aliquam. </li>
+                    <li>In volutpat mauris ut nisl consectetur sagittis.</li>
+                    <li>Donec rhoncus urna ac accumsan facilisis. </li>
+                </ul>
+                <p>Duis volutpat metus sit amet rhoncus ultricies. Vestibulum at commodo quam. Aliquam ut
+                    fringilla
+                    lorem. Fusce est elit, placerat eget dictum sed, iaculis ut tortor. Nulla mauris nisi,
+                    maximus
+                    consectetur ex sollicitudin, imperdiet feugiat libero. Etiam vehicula dapibus sagittis.
+                    Nam
+                    sed
+                    ullamcorper arcu. Integer congue ultricies dolor vel accumsan. Nulla aliquam pulvinar
+                    augue,
+                    sit
+                    amet ullamcorper mauris consequat ut.</p>
+            </div>
+
+            <!-- third paragraph -->
+            <div id="paraC">
+                <h1>Ghostly Goo in your Kitchen Sink?</h1>
+                <p>on July 01 in
+                    <a id="l12" href="https://wordpress.com/themes"> General </a>
+                    tagged
+                    <a id="l13" href="https://wordpress.com/install-plugins/">petitions </a>
+                    by
+                    <a id="l14" href="https://wordpress.com/google/">admin</a>
+                </p>
+                <p> <b>Integer convallis est a bibendum molestie</b> velit turpis viverra est, et
+                    pellentesque
+                    diam
+                    ipsum eu velit. Morbi eros ipsum, imperdiet ac accumsan in, finibus eget ipsum. Cras sed
+                    neque
+                    ac
+                    ligula lacinia maximus. Praesent sagittis ullamcorper semper. Donec sit amet ultricies
+                    elit.
+                    Mauris
+                    at malesuada nibh. Integer et luctus felis, ut laoreet nibh. In ultrices placerat erat.
+                    Quisque
+                    a
+                    sapien dolor. Vivamus faucibus, nulla et consequat vehicula, diam risus consequat orci,
+                    non
+                    tristique nunc diam ut urna. <a id="l15" href="https://wordpress.com/fr/features/">
+                        <b>Duis id nisi ut magna </b>
+                    </a>luctus viverra. Phasellus semper rhoncus dolor in
+                    tempus.</p>
+
+                <!-- header level 4 -->
+                <h4 class="CHeader">Header Level 4</h4>
+                <ol>
+                    <li>Curabitur in leo sed leo viverra pulvinar non non tellus. </li>
+                    <li>Nunc at mi et mauris facilisis accumsan. </li>
+                </ol>
+                <div class="VGL">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus risus
+                        semper, ornare tellus eu, sollicitudin risus. Integer egestas molestie eleifend.
+                        Nulla ornare neque ut metus aliquet posuere. Pellentesque euismod egestas luctus.
+                        Pellentesque porta enim et elit eleifend, nec hendrerit turpis dictum. Donec
+                        eleifend suscipit sem congue semper. Donec tristique velit non orci tincidunt
+                        iaculis. Nam vel vestibulum mauris, sit amet tincidunt mi. Proin commodo tortor non
+                        euismod venenatis. </p>
+                </div>
+
+                <!-- header level 3 -->
+                <h3 class="CHeader">Header Level 3</h3>
+                <ul>
+                    <li>Donec pellentesque metus non lectus ultricies vehicula. </li>
+                    <li>Praesent at mi ac ligula interdum tristique. </li>
+                </ul>
+                <ol>
+                    <li>Curabitur in lorem malesuada dui placerat porta. </li>
+                    <li>Nunc at mi et mauris facilisis accumsan. </li>
+                </ol>
+            </div>
+
+            <!-- contacts -->
+            <div id="paraD"></div>
+
+            <!-- TODO duplicated code -->
+            <!-- links -->
+            <div id="paraLink">
+                <h3 class="CHeader">Categories</h3>
+                <a href="https://wordpress.com/fr/partners/"> General </a>
+                <br>
+                <a href="https://www.nytimes.com/2020/05/14/style/haunted-house-ghost-quarantine.html"> Ghost
+                    Sightings
+                </a>
+                <br>
+                <a href="https://en.wikipedia.org/wiki/Category:UFO_crashes">
+                    UFO Crashes </a>
+                <br>
+                <a href="https://www.businessinsider.com/true-government-conspiracies-2013-12">
+                    Government Coverups
+                </a>
+                <br>
+                <a href="https://www.opendemocracy.net/en/transformation/five-real-conspiracies-you-need-know-about/">International
+                    Conspiracies
+                </a>
+
+                <h3 class="CHeader">Recent Posts </h3>
+                <a href="https://www.housebeautiful.com/lifestyle/g22635979/real-life-haunted-house-stories/">
+                    Ghost
+                    Sighting in
+                    Mansion
+                </a>
+                <br>
+                <a
+                    href="https://www.nationalgeographic.com/science/article/alien-hunters-detect-mysterious-radio-signal-from-nearby-star">
+                    UFO pickedup by satellites
+                </a>
+                <br>
+                <a href="https://omrf.org/findings/are-there-mutants-among-us/"> Mutants amoung us?
+                </a>
+                <br>
+                <a href="https://www.livescience.com/24598-bigfoot.html"> Bigfoot: Fact or Fiction
+                </a>
+                <h3 class="CHeader">Archives</h3>
+                <a href="https://wordpress.com/fr/createur-de-logo/"> June 2008
+                </a>
+                <br>
+                <a href="https://wordpress.com/fr/do-it-for-me/?ref=footer_logged-out-homepage"> May 2008
+                </a>
+                <br>
+                <a href="https://wpvip.com/">
+                    April 2008
+                </a>
+                <br>
+                <a href="https://wordpress.com/fr/e-mail-pro/">
+                    March 2008
+                </a>
+            </div>
+        </div>
+
+        <!-- right-hand side links -->
+        <div class="col-3 col-m-3 contentRight">
+            <h3 class="CHeader">Categories</h3>
+            <a href="https://wordpress.com/fr/partners/"> General </a>
+            <br>
+            <a href="https://www.nytimes.com/2020/05/14/style/haunted-house-ghost-quarantine.html"> Ghost
+                Sightings
+            </a>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Category:UFO_crashes">
+                UFO Crashes </a>
+            <br>
+            <a href="https://www.businessinsider.com/true-government-conspiracies-2013-12">
+                Government Coverups
+            </a>
+            <br>
+            <a href="https://www.opendemocracy.net/en/transformation/five-real-conspiracies-you-need-know-about/">International
+                Conspiracies
+            </a>
+
+            <h3 class="CHeader">Recent Posts </h3>
+            <a href="https://www.housebeautiful.com/lifestyle/g22635979/real-life-haunted-house-stories/">
+                Ghost
+                Sighting in
+                Mansion
+            </a>
+            <br>
+            <a
+                href="https://www.nationalgeographic.com/science/article/alien-hunters-detect-mysterious-radio-signal-from-nearby-star">
+                UFO pickedup by satellites
+            </a>
+            <br>
+            <a href="https://omrf.org/findings/are-there-mutants-among-us/"> Mutants amoung us?
+            </a>
+            <br>
+            <a href="https://www.livescience.com/24598-bigfoot.html"> Bigfoot: Fact or Fiction
+            </a>
+            <h3 class="CHeader">Archives</h3>
+            <a href="https://wordpress.com/fr/createur-de-logo/"> June 2008
+            </a>
+            <br>
+            <a href="https://wordpress.com/fr/do-it-for-me/?ref=footer_logged-out-homepage"> May 2008
+            </a>
+            <br>
+            <a href="https://wpvip.com/">
+                April 2008
+            </a>
+            <br>
+            <a href="https://wordpress.com/fr/e-mail-pro/">
+                March 2008
+            </a>
+        </div>
+        <div class="col-1 col-m-1 col-s-1"> </div>
+    </div>
+
+    <!-- footer -->
+    <div class="row">
+        <div class="footer">
+            <!-- TODO &nbsp -->
+            <div class="col-1 col-m-1 col-s-1"> &nbsp </div>
+            <div class="col-4 col-m-4 col-s-11 footerLeft">
+                <h3 class="FHeader">Links</h3>
+                <a href="https://design.tutsplus.com/">PSDtuts - Photoshop Tutorials </a>
+                <br>
+                <a href="https://code.tutsplus.com/"> NetTuts - Web Development and design tutorials </a>
+                <br>
+                <a
+                    href="https://graphicdesignjunction.com/2019/08/illustrator-tutorials-34-new-vector-tuts-to-learn-drawing-and-illustration/">
+                    VectorTuts - Illustrator and Vector tutorials </a>
+                <br>
+                <a href="https://www.pinterest.ca/tealesworld/flash-tuts/"> FlashTuts - Adobe Flash tutorials </a>
+            </div>
+
+            <div class="col-1 col-m-1 col-s-1"> &nbsp </div>
+            <div class="col-3 col-m-3 col-s-11 footerMiddle">
+                <h3 class="FHeader">Follow our updates</h3>
+                <a href="https://wordpress.com/fr/features/">Subscribe to RSS Feed</a>
+                <br>
+                <a href="https://en.wikipedia.org/wiki/RSS">What is RSS? </a>
+                <br>
+                <a href="https://wordpress.com/fr/createur-de-logo/"> Email Updates </a>
+            </div>
+
+            <div class="col-2 col-m-2 col-s-11 footerRight">
+                Copyright @ 2009 <br>
+                All Rights Reserved.
+            </div>
+            <div class="col-1 col-m-1 col-s-1"> &nbsp </div>
+        </div>
+    </div>
+
+    <script>
+        // hambuger of menu items
+        function hambuger() {
+            // check if list is displayed
+            var disp = document.getElementsByClassName("tab")[0].style.display;
+            if (disp === "none") {  // display list
+                document.getElementsByClassName("tab")[0].style.display = 'block';
+                document.getElementById("tabItem").style.display = 'block';
+            } else {    // hide list
+                document.getElementsByClassName("tab")[0].style.display = 'none';
+                document.getElementById("tabItem").style.display = 'none';
+            }
+        }
+
+        // hides all paragraphs
+        function hideparas() {
+            document.getElementById("paraA").style.display = 'none';
+            document.getElementById("paraB").style.display = 'none';
+            document.getElementById("paraC").style.display = 'none';
+            document.getElementById("paraD").style.display = 'none';
+            document.getElementById("paraLink").style.display = 'none';
+        }
+
+        function displayParaA() {
+            hideparas();
+            document.getElementById("paraA").style.display = 'block';
+        }
+
+        function displayParaB() {
+            hideparas();
+            document.getElementById("paraB").style.display = 'block';
+        }
+
+        function displayParaC() {
+            hideparas();
+            document.getElementById("paraC").style.display = 'block';
+        }
+
+        function displayParaD() {
+            hideparas();
+            document.getElementById("paraD").style.display = 'block';
+        }
+
+        function displayContact() {
+            hideparas();
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("paraD").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "contact.txt");
+            xhttp.send();
+            displayParaD();
+        }
+
+        function displayLink() {
+            hideparas();
+            document.getElementById("paraLink").style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
