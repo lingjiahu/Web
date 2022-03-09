@@ -64,14 +64,14 @@ PC: >768px
         #titleLeft {
             color: white;
             font-size: 4vw;
-            padding-top: 4vh;
-            padding-bottom: 4vh;
+            padding-top: 5vh;
+            padding-bottom: 1vh;
         }
 
         #titleRight {
             font-size: 2vw;
             color: white;
-            padding-top: 6vh;
+            padding-top: 8vh;
             padding-left: 3vw;
         }
 
@@ -213,7 +213,7 @@ PC: >768px
             .topBar {
                 font-size: 3vw;
                 padding-top: 1vh;
-                padding-bottom: 1vh;
+                padding-bottom: 2vh;
             }
 
             .title {
@@ -222,7 +222,8 @@ PC: >768px
 
             #titleLeft {
                 font-size: 5vw;
-                padding-bottom: 0vh;
+                padding-top: 3vh;
+                padding-bottom: 1vh;
             }
 
             #titleRight {
@@ -270,7 +271,11 @@ PC: >768px
 
             .footer {
                 font-size: 3vw;
-                height: 50vh;
+                height: 55vh;
+            }
+
+            .footerLeft {
+                margin-bottom: 2vh;
             }
 
             .col-s-1 {
@@ -323,7 +328,7 @@ PC: >768px
         }
 
         /* For tablets */
-        @media only screen and (min-width: 426px) {
+        @media only screen and (min-width: 426px) and (max-width: 768px) {
             .tab {
                 display: none !important;
                 /* TODO */
@@ -332,6 +337,10 @@ PC: >768px
             #tabItem {
                 display: none !important;
                 /* TODO */
+            }
+
+            .contentRight {
+                height: 50vh ;                
             }
 
             .col-m-1 {
